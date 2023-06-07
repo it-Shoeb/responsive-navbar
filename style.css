@@ -1,0 +1,155 @@
+:root{
+/*     
+        --primary-color:#222327;
+        --secondary-color:#fff;
+        --tertiory-color:#29fd53; */
+    --transition-50s: .50s ease;
+
+    --primary-color:#093f31;
+    --secondary-color:#fff;
+    --tertiory-color:#58d0b6;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+li{
+    list-style-type: none ;
+    color: var(--secondary-color);
+}
+
+a{
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: var(--transition-50s);
+}
+
+i{
+    color: var(--tertiory-color);
+    font-size: 1.8rem;
+}
+
+.FLEXCENTER{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+header{
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    justify-content: space-between;
+    background: transparent;
+    padding: 28px 12%;
+    transition: var(--transition-50s);
+}
+
+.logo{
+    gap: .5rem;
+}
+
+.logo span{
+    color: var(--secondary-color);
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+a:hover{
+    color: var(--tertiory-color);
+}
+
+.main a:first-child{
+    gap: .5rem;
+}
+
+#menu-icon{
+    font-size: 35px;
+    color: var(--secondary-color);
+    z-index: 1000;
+    cursor: pointer;
+    display: none;
+}
+
+
+/* if viewport size is less than 1280px  then*/
+@media screen and (max-width:1280px){
+    header{
+        padding: 14px 2%;
+        transition: .2s;
+    }
+
+    .nav-links a{
+        padding: 5pz 0;
+    }
+}
+
+
+/* if viewport size is less than 1090px  then*/
+
+@media screen and (max-width:1090px){
+    #menu-icon{
+        display: block;
+        transition: var(--transition-50s);
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        padding-block: 1rem;
+        background-color: var(--tertiory-color);
+        border-radius: 15px;
+        transition: var(--transition-50s);
+    }
+    
+    .nav-links a{
+        display: block;
+        color: var(--primary-color);
+        transition: var(--transition-50s);
+    }   
+
+    .nav-links a:hover{
+        color: var(--secondary-color);
+        scale: 2px;
+        /* transition: var(--transition-50s); */
+    }
+
+    .nav-links{
+        flex-direction: column;
+        width: 300px;
+    }
+
+    .navbar.open{
+        right: 2%;
+    }
+}
+
+.item{
+    position: relative;
+}
+
+.item:hover::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background: red;
+    left: 9px;
+    top: 10px; 
+    width: 13px;
+    height: 13px;
+}
